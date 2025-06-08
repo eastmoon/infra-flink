@@ -1,0 +1,31 @@
+# Docker-Compose document
+# Ref : https://docs.docker.com/compose/compose-file/
+
+services:
+  flink-app:
+    build:
+      context: flink
+    container_name: docker-flink-app_${PROJECT_NAME}
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      # Flink Configuration
+      FLINK_PROPERTIES: "jobmanager.rpc.address: flink-app"
+      # Enable plugins
+      ENABLE_BUILT_IN_PLUGINS: flink-s3-fs-hadoop-1.20.1.jar
+    networks:
+      - flink-net
+    command:
+      - |
+        standalone-job
+        --job-classname com.job.ClassName
+        --jars s3://my-bucket/my-flink-job.jar,s3://my-bucket/my-flink-udf.jar
+        [--job-id <job id>]
+        [--fromSavepoint /path/to/savepoint]
+        [--allowNonRestoredState]
+        [job arguments]
+
+networks:
+  flink-net:
+    driver: bridge

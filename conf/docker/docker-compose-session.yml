@@ -1,0 +1,51 @@
+# Docker-Compose document
+# Ref : https://docs.docker.com/compose/compose-file/
+
+services:
+  flink-job-mgr:
+    build:
+      context: flink
+    container_name: docker-flink-job-mgr_${PROJECT_NAME}
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      # Flink Configuration
+      FLINK_PROPERTIES: "jobmanager.rpc.address: flink-job-mgr"
+    networks:
+      - flink-net
+    command: jobmanager
+
+  flink-task-mgr-1:
+    build:
+      context: flink
+    container_name: docker-flink-task-mgr-1_${PROJECT_NAME}
+    restart: always
+    environment:
+      # Flink Configuration
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: flink-job-mgr
+        taskmanager.numberOfTaskSlots: 2
+    networks:
+      - flink-net
+    command: taskmanager
+
+  flink-task-mgr-2:
+    build:
+      context: flink
+    container_name: docker-flink-task-mgr-2_${PROJECT_NAME}
+    restart: always
+    environment:
+      # Flink Configuration
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: flink-job-mgr
+        taskmanager.numberOfTaskSlots: 2
+    networks:
+      - flink-net
+    command: taskmanager
+
+networks:
+  flink-net:
+    driver: bridge

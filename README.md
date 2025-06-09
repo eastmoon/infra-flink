@@ -33,6 +33,10 @@ flink into --tag=[service-name]
 
 詳細文獻整理參閱 [Flink 框架概念](./docs/concept.md)
 
+### 架構與部署
+
+詳細文獻整理參閱 [Flink 架構與容器部屬](./docs/architecture-and-deployment.md)
+
 ### 安全性
 
 ## Apache Airflow vs Apache Flink

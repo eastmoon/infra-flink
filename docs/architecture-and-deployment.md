@@ -8,7 +8,7 @@
 
 ## Flink Cluster
 
-![](./img/flink-architecture)
+![](./img/flink-architecture.png)
 > from [Flink Architecture](https://nightlies.apache.org/flink/flink-docs-lts/docs/concepts/flink-architecture/)
 
 Flink 在執行階段由兩種類型的程序組成，一個 JobManager 和至少一個 TaskManager。

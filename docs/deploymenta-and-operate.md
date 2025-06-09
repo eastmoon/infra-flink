@@ -11,11 +11,11 @@
 ![](./img/flink-component-structure.png)
 > from [Deployment](https://nightlies.apache.org/flink/flink-docs-lts/docs/deployment/overview/)
 
-##### Component
+### Component
 
 + Flink Client
 
-將批次或串流應用程式編譯入資料流程圖，然後將其提交給 JobManager；例如 [Command-line interface]((https://nightlies.apache.org/flink/flink-docs-lts/docs/deployment/cli/) 中的 Job 管理操作。
+將批次或串流應用程式編譯入資料流程圖，然後將其提交給 JobManager；例如 [Command-line interface](https://nightlies.apache.org/flink/flink-docs-lts/docs/deployment/cli/) 中的 Job 管理操作。
 
 + JobManager
 
@@ -25,7 +25,7 @@ JobManager 是 Fl​​ink 的核心系統，用於協調所有元件的運作�
 
 TaskManagers 是實際執行 Flink 工作的服務。
 
-##### External Components
+### External Components
 
 + High Availability Service Provider
 
@@ -89,7 +89,7 @@ Another action for stopping a job is stop. It is a more graceful way of stopping
 停止工作 ( Terminating a Job ) 使用 stop 指令，當使用者請求停止工作時，所有來源都將被要求發送一個保存點記錄最後的狀態，並且在該保存點儲存完成後，呼叫 cancellation() 方法結束工作程序。
 
 ```
-$ ./bin/flink stop \
+flink stop \
       --savepointPath /tmp/flink-savepoints \
       $JOB_ID
 ```
@@ -99,7 +99,7 @@ $ ./bin/flink stop \
 除了停止工作外，亦可透過取消操作來取消工作：
 
 ```
-./bin/flink cancel $JOB_ID
+flink cancel $JOB_ID
 ```
 
 對應工作的狀態將從「正在執行」轉換為「已取消」，並停止所有計算；停止不會產生保存點，並且在 ```flink list --all``` 中可以看到工作為「已取消」。
@@ -109,7 +109,7 @@ $ ./bin/flink stop \
 您可以使用清單操作，監視任何正在執行中的工作狀態與資訊：
 
 ```
-./bin/flink list
+flink list
 ```
 
 若工作已提交但未啟動，則會在 “Scheduled Jobs” 的清單下。
@@ -119,7 +119,7 @@ $ ./bin/flink stop \
 建立保存點來保存工作的目前狀態，此操作指令如下，並需提供兩個參數 JobID 和 Savepoint 目錄：
 
 ```
-$ ./bin/flink savepoint \
+flink savepoint \
       $JOB_ID \
       /tmp/flink-savepoints
 ```
@@ -129,7 +129,7 @@ $ ./bin/flink savepoint \
 此外，建立保存點的操作會依據工作狀態而等待資訊處理，這會使得客戶端收到連線逾時異常；若有此狀況，則可使用 --detached 參數，讓命令在提交完成後返回。
 
 ```
-$ ./bin/flink savepoint \
+flink savepoint \
       $JOB_ID \
       /tmp/flink-savepoints
       -detached
@@ -138,7 +138,7 @@ $ ./bin/flink savepoint \
 保存點操作也可用於刪除保存點，以下為 --dispose 參數的操作方式：
 
 ```
-$ ./bin/flink savepoint \
+flink savepoint \
       --dispose \
       /tmp/flink-savepoints/$SAVEPOINT_FLIENAME \
       $JOB_ID
@@ -149,7 +149,7 @@ $ ./bin/flink savepoint \
 您也可以手動建立檢查點來儲存目前狀態，其指令如下：
 
 ```
-$ ./bin/flink checkpoint \
+flink checkpoint \
       $JOB_ID
 ```
 

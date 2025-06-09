@@ -1,4 +1,4 @@
-# Flink 架構與容器部屬
+# Flink 架構與部屬
 
 + [flink - Docker](https://hub.docker.com/_/flink)
 + [Docker Setup](https://nightlies.apache.org/flink/flink-docs-lts/docs/deployment/resource-providers/standalone/docker/)
@@ -13,7 +13,7 @@
 
 Flink 在執行階段由兩種類型的程序組成，一個 JobManager 和至少一個 TaskManager。
 
-Flink 客戶端不屬於 Flink 執行階段程序的一部分，而是用於準備資料流並將其傳送至 JobManager；因此，Flink 客戶端可以是斷開連線的分離模式，或保持連線以接收進度報告的連線模式。
+Flink 客戶端不屬於 Flink 執行階段程序的一部分，而是用於準備與將資料流程傳送至 JobManager；因此，Flink 客戶端可以是斷開連線的分離模式，或保持連線以接收進度報告的連線模式。
 
 #### JobManager
 

@@ -35,7 +35,9 @@ flink into --tag=[service-name]
 
 ### 架構與部署
 
-詳細文獻整理參閱 [Flink 架構與容器部屬](./docs/architecture-and-deployment.md)
+詳細文獻整理參閱 [Flink 架構與部屬](./docs/architecture-and-deployment.md)
+
+詳細文獻整理參閱 [Flink 部屬與運維](./docs/deploymenta-and-operate.md)
 
 ### 安全性
 

@@ -19,6 +19,11 @@ goto end
     IF NOT EXIST %TARGET_DIR% (mkdir %TARGET_DIR%)
     echo CACHE_DIR=%TARGET_DIR% >> %CONF_FILE_PATH%
 
+    @rem Setting application directory
+    set TARGET_DIR=%CLI_DIRECTORY%app
+    IF NOT EXIST %TARGET_DIR% (mkdir %TARGET_DIR%)
+    echo APP_DIR=%TARGET_DIR% >> %CONF_FILE_PATH%
+
     goto end
 )
 

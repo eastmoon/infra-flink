@@ -21,7 +21,7 @@ under the License.
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>flink</groupId>
-	<artifactId>flink-app</artifactId>
+	<artifactId>base-skeleton</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 

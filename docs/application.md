@@ -3,7 +3,6 @@
 + [Project Configuration](https://nightlies.apache.org/flink/flink-docs-lts/docs/dev/configuration/overview/)
 + [DataStream API](https://nightlies.apache.org/flink/flink-docs-lts/docs/dev/datastream/overview/)、[DataStream API 中文](https://nightlies.apache.org/flink/flink-docs-lts/zh/docs/dev/datastream/overview/)
     - [Operators](https://nightlies.apache.org/flink/flink-docs-lts/docs/dev/datastream/operators/overview/)、[Operators 中文](https://nightlies.apache.org/flink/flink-docs-lts/zh/docs/dev/datastream/operators/overview/)
-+ [Table API & SQL](https://nightlies.apache.org/flink/flink-docs-lts/docs/dev/table/overview/)
 + [State Processor API](https://nightlies.apache.org/flink/flink-docs-lts/docs/libs/state_processor_api/)
 + [Data Sinks](https://nightlies.apache.org/flink/flink-docs-master/docs/dev/datastream/sinks/)
     - [Streaming File Sink]([StreamingFileSink](https://nightlies.apache.org/flink/flink-docs-lts/docs/connectors/datastream/streamfile_sink/))
@@ -82,7 +81,7 @@ mvn archetype:generate \
 + 封裝：```mvn package -DoutputDirectory=/cache/${PWD##*/}```
 + 清除舊檔 + 編譯 + 封裝：```mvn clean compile package -DoutputDirectory=/cache/${PWD##*/}```
 
-最終輸出目錄會是基於兩個變數 outputDirectory 與專案目錄名稱構成的 ```/cache/flink-app```。
+最終輸出目錄會是基於兩個變數 outputDirectory 與專案目錄名稱構成的 ```/cache/base-skeleton```。
 
 ## 測試與執行
 
@@ -95,7 +94,7 @@ flink into --tag=flink-job-mgr
 
 + 執行專案發佈的 .jar 檔案
 ```
-flink run --detached ./app/flink-app/flink-app-1.0.0.jar
+flink run --detached ./app/base-skeleton/base-skeleton-1.0.0.jar
 ```
 > ```./app``` 掛載目錄與開發環境的 ```/cache``` 掛載目錄相同，因此能共享封裝的內容
 

@@ -11,8 +11,9 @@
     - [Sample Project using the Java API](https://nightlies.apache.org/flink/flink-docs-release-1.2/quickstart/java_api_quickstart.html)
     - [Flink application example](https://docs.cloudera.com/cdf-datahub/latest/how-to-flink/topics/csa-application-example.html)
     - [Batch Examples](https://nightlies.apache.org/flink/flink-docs-release-1.13/docs/dev/dataset/examples/)
+    - [Flink流处理核心编程](https://blog.csdn.net/qq_43523503/article/details/114958516)
 
-主要內容包括：
+**注意需知：由於上述連結文件橫跨不同版本的 Flink，除 LTS 文件外僅供參考，實際可用物件與函數仍需視當前版本修正。**
 
 ## 開發環境
 

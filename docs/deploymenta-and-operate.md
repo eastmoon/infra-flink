@@ -84,8 +84,6 @@ flink run \
 
 ### Terminating a Job
 
-Another action for stopping a job is stop. It is a more graceful way of stopping a running streaming job as the stop flows from source to sink. When the user requests to stop a job, all sources will be requested to send the last checkpoint barrier that will trigger a savepoint, and after the successful completion of that savepoint, they will finish by calling their cancel() method.
-
 停止工作 ( Terminating a Job ) 使用 stop 指令，當使用者請求停止工作時，所有來源都將被要求發送一個保存點記錄最後的狀態，並且在該保存點儲存完成後，呼叫 cancellation() 方法結束工作程序。
 
 ```

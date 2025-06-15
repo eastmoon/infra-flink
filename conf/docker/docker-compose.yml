@@ -11,6 +11,7 @@ services:
       - 8081:8081
     volumes:
       - ${CACHE_DIR}/maven:/opt/flink/app
+      - ${CACHE_DIR}/flink:/cache
     environment:
       # Flink Configuration
       FLINK_PROPERTIES: "jobmanager.rpc.address: flink-job-mgr"
@@ -23,6 +24,8 @@ services:
       context: flink
     container_name: docker-flink-task-mgr_${PROJECT_NAME}
     restart: always
+    volumes:
+      - ${CACHE_DIR}/flink:/cache
     environment:
       # Flink Configuration
       - |
@@ -38,8 +41,8 @@ services:
       context: maven
     container_name: docker-java-maven_${PROJECT_NAME}
     volumes:
-      - ${CACHE_DIR}/maven:/cache
       - ${APP_DIR}/maven:/app
+      - ${CACHE_DIR}/maven:/cache
     working_dir: /app
 
 networks:

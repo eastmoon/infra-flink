@@ -45,6 +45,10 @@ flink into --tag=[service-name]
 
 詳細文獻整理參閱 [Flink 資料處理程式設計](./docs/data-processing,md)
 
+### 連結器
+
+詳細文獻整理參閱 [Flink 連結器](./docs/connector.md)
+
 ### 安全性
 
 詳細文獻整理參閱 [Flink 安全性](./docs/security.md)

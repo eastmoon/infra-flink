@@ -4,7 +4,7 @@
 本文講解 Flink 程序間網路通訊如何利用 TLS/SSL 進行加密通訊，其主要用於跨主機間的 Flink 叢集架構
 
 + [Kerberos Authentication Setup and Configuration](https://nightlies.apache.org/flink/flink-docs-lts/docs/deployment/security/security-kerberos/)、[中文](https://nightlies.apache.org/flink/flink-docs-release-1.20/zh/docs/deployment/security/security-kerberos/)
-本文講解如何利用 Kerberos 設定 Flink 的驗證操作
+本文講解如何利用 [Kerberos](https://zh.wikipedia.org/zh-tw/Kerberos) 設定 Flink 的驗證操作
 
 + [Delegation Tokens](https://nightlies.apache.org/flink/flink-docs-lts/docs/deployment/security/security-delegation-token/)
 本文講解如何利用委託權杖 ( Delegation Tokens ) 設定 Flink 的驗證操作
